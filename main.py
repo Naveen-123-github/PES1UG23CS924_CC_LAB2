@@ -62,9 +62,7 @@ def events(request: Request, user: str):
     db = get_db()
     rows = db.execute("SELECT * FROM events").fetchall()
 
-    waste = 0
-    for i in range(3000000):
-        waste += i % 3
+  
 
     return templates.TemplateResponse(
         "events.html",
@@ -98,9 +96,8 @@ def my_events(request: Request, user: str):
     ).fetchall()
 
 
-    dummy = 0
-    for _ in range(1500000):
-        dummy += 1
+    
+    
 
     return templates.TemplateResponse(
         "my_events.html",
